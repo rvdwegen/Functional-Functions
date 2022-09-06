@@ -58,7 +58,7 @@ Function Test-CSVHeaders {
 	}
 }
 
-$CSVpath = ".\knzbvoorbeeld.csv"
+$CSVpath = ".\example.csv"
 
 $correctHeaders = @(
 	'UserPrincipalName', 'Password', 'FirstName', 'LastName', 'JobTitle'
