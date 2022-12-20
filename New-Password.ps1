@@ -1,7 +1,7 @@
 function New-Password {
     param (
         [Parameter(Mandatory = $true)]
-        [ValidateRange(12,256)]
+        [ValidateRange(12,256)] # Default minimum and maximum length in AzureAD 
         [int]$length,
 
         [Parameter(Mandatory = $false)]
