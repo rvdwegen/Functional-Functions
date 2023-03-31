@@ -22,7 +22,7 @@ function New-Password {
     if ($includeUppercase) { $charTypes += 'ABCDEFGHIJKLMNOPQRSTUVWXYZ' }
     if ($includeLowercase) { $charTypes += 'abcdefghijklmnopqrstuvwxyz' }
     if ($includeNumbers) { $charTypes += '0123456789' }
-    if ($includeSymbols) { $charTypes += '!@#$%^&*(){}[]=<>,.' }
+    if ($includeSymbols) { $charTypes += '!@#$%^&*(){}[]=<>.' }
 
     # If no character types are selected, throw an error
     if ($charTypes.Count -eq 0) { throw 'Set at least one of the parameters to true.' }
