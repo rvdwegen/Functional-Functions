@@ -39,7 +39,7 @@ function New-Password {
     if ($includeUppercase -and ($password -notmatch '\p{Lu}')) { $missingCharTypes += 'uppercase' }
     if ($includeLowercase -and ($password -notmatch '\p{Ll}')) { $missingCharTypes += 'lowercase' }
     if ($includeNumbers -and ($password -notmatch '\p{Nd}')) { $missingCharTypes += 'numbers' }
-    if ($includeSymbols -and ($password -notmatch '[`!@#$%^&*()_+\-=\[\]{}\\|,.<>\/?~]')) { $missingCharTypes += 'symbols' }
+    if ($includeSymbols -and ($password -notmatch '[`!@#$%^&*()_+\-=\[\]{}\\|.<>\/?~]')) { $missingCharTypes += 'symbols' }
 
     # If any character types are missing, regenerate the password
     if ($missingCharTypes.Count -gt 0) {
