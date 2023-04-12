@@ -1,4 +1,5 @@
 function New-Password {
+    [CmdletBinding()]
     param (
         [Parameter(Mandatory = $true)]
         [ValidateRange(12,256)] # Default minimum and maximum length in AzureAD 
@@ -44,7 +45,7 @@ function New-Password {
     # If any character types are missing, regenerate the password
     if ($missingCharTypes.Count -gt 0) {
         # Because we are nesting another call of this function in here it will essentially loop until a password is generated that has all CharTypes
-        Write-Warning "The generated password does not include any of the following character types: $($missingCharTypes -join ', '). Regenerating password..."
+        Write-Verbose "The generated password does not include any of the following character types: $($missingCharTypes -join ', '). Regenerating password..."
         $password = New-Password -length $length -includeUppercase $includeUppercase -includeLowercase $includeLowercase -includeNumbers $includeNumbers -includeSymbols $includeSymbols
     }
 
